@@ -14,26 +14,25 @@
  * limitations under the License.
  */
 
-package com.cjs.scalaLearn.howToUsedType;
+package com.cjs.scalaLearn.collectionsLearn
 
-// #snip
-//Java code 
-class Fruit {} 
-class Banana extends Fruit {}
-class Apple extends Fruit {}
+object Unary extends App {
 
-public class Trouble {
-  public static void main(String[] args) {
-    Banana[] basketOfBanana = new Banana[2];
-    basketOfBanana[0] = new Banana();
-    
-    Fruit[] basketOfFruits = basketOfBanana; 
-    basketOfFruits[1] = new Apple();
-    
-    for(Banana banana : basketOfBanana) {
-      System.out.println(banana);
-    }
-
+  // #snip_8-27
+  class Sample {
+    //重写unary_方法,可以重新定义+-!~
+    //+-!~的操作对象在后
+    def unary_+(): Unit = println("Called unary +")
+    def unary_-(): Unit = println("called unary -")
+    def unary_!(): Unit = println("called unary !")
+    def unary_~(): Unit = println("called unary ~")
   }
+
+  val sample = new Sample
+  +sample
+  -sample
+  !sample
+  ~sample
+  // #snip_8-27
+
 }
-// #snip

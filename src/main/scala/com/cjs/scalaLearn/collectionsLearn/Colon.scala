@@ -13,27 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+//以":"结尾的方法，调用目标是操作符后
+package com.cjs.scalaLearn.collectionsLearn
 
-package com.cjs.scalaLearn.howToUsedType;
-
-// #snip
-//Java code 
-class Fruit {} 
-class Banana extends Fruit {}
-class Apple extends Fruit {}
-
-public class Trouble {
-  public static void main(String[] args) {
-    Banana[] basketOfBanana = new Banana[2];
-    basketOfBanana[0] = new Banana();
-    
-    Fruit[] basketOfFruits = basketOfBanana; 
-    basketOfFruits[1] = new Apple();
-    
-    for(Banana banana : basketOfBanana) {
-      System.out.println(banana);
-    }
-
+object Colon extends App {
+  // #snip_8-25
+  class Cow {
+    def ^(moon: Moon): Unit = println("Cow jumped over the moon")
   }
+  class Moon {
+    def ^:(cow: Cow): Unit = println("This cow jumped over the moon too")
+  }
+  // #snip_8-25
+
+  // #snip_8-26
+  val cow = new Cow
+  val moon = new Moon
+
+  cow ^ moon
+  cow ^: moon //等价于moon.^:(cow)
+  moon.^:(cow)
+  // #snip_8-26
+
 }
-// #snip

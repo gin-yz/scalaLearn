@@ -13,27 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/*
+* execute around method方法案例
+* */
+package com.cjs.scalaLearn.fuctionAndClosure
 
-package com.cjs.scalaLearn.howToUsedType;
+object WriteToFile extends App {
+  //  #snip_6-35
+  import java.io._
 
-// #snip
-//Java code 
-class Fruit {} 
-class Banana extends Fruit {}
-class Apple extends Fruit {}
-
-public class Trouble {
-  public static void main(String[] args) {
-    Banana[] basketOfBanana = new Banana[2];
-    basketOfBanana[0] = new Banana();
-    
-    Fruit[] basketOfFruits = basketOfBanana; 
-    basketOfFruits[1] = new Apple();
-    
-    for(Banana banana : basketOfBanana) {
-      System.out.println(banana);
+  def writeToFile(fileName: String)(codeBlock: PrintWriter => Unit): Unit = {
+    val writer = new PrintWriter(new File(fileName))
+    try {
+      codeBlock(writer)
+    } finally {
+      writer.close()
     }
-
   }
+  //  #snip_6-35
+
+  //  #snip_6-36
+  writeToFile("./output.txt") { writer =>
+    writer.write("hello from Scala")
+    writer write "cjs dsg"
+  }
+  //  #snip_6-36
+
 }
-// #snip

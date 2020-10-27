@@ -14,26 +14,13 @@
  * limitations under the License.
  */
 
-package com.cjs.scalaLearn.howToUsedType;
+package com.cjs.scalaLearn.fuctionAndClosure.repeatUseFunction
 
-// #snip
-//Java code 
-class Fruit {} 
-class Banana extends Fruit {}
-class Apple extends Fruit {}
-
-public class Trouble {
-  public static void main(String[] args) {
-    Banana[] basketOfBanana = new Banana[2];
-    basketOfBanana[0] = new Banana();
-    
-    Fruit[] basketOfFruits = basketOfBanana; 
-    basketOfFruits[1] = new Apple();
-    
-    for(Banana banana : basketOfBanana) {
-      System.out.println(banana);
-    }
-
+// #snip_6-23
+class Equipment(val routine: Int => Int) {
+  def simulate(input: Int): Int = {
+    print("Running simulation...")
+    routine(input)
   }
 }
-// #snip
+// #snip_6-23
