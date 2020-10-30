@@ -13,10 +13,10 @@ object ForLearn {
       yield i*2
     println(doubleresult)
 
-    val doubleResult2 = for { //另外一种写法
+    val doubleResult2: Seq[Int] = for { //另外一种写法
       i<- 1 to 10
       if i % 2 ==0
-    } yield i*2
+                                        } yield i*2
     println(doubleResult2)
 
     //多个生成器时，相当于多个for嵌套执行，最右边的为最内层的循环

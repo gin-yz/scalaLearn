@@ -2,6 +2,8 @@ package com.cjs.scalaLearn.collectionsLearn
 
 import java.util.NoSuchElementException
 
+import scala.collection.mutable
+
 object MapLearn {
   def main(args: Array[String]): Unit = {
     val feeds = Map( //默认都是不可变对象
@@ -32,7 +34,7 @@ object MapLearn {
     val newFeeds = feeds.updated("cjs4","dsg4")
     println(newFeeds)
 
-    val mutableFeeds = scala.collection.mutable.Map(
+    val mutableFeeds: mutable.Map[String, String] = scala.collection.mutable.Map(
       "cjs" -> "dsg",
       "cjs2" -> "dsg2",
       "cjs3" -> "dsg3"
