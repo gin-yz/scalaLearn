@@ -12,7 +12,7 @@ object SetLearn {
 
     val feeds1 = Set("cjs1", "cjs2", "cjs3")
     val feeds2 = Set("cjs2", "cjs3", "cjs4")
-    println(feeds1 filter (_ contains "cjs"))
+    println(feeds1 filter (_ contains "cjs"))c
     println(feeds1 ++ feeds2)
     println(feeds1 & feeds2)
     println(feeds1 map ("dsg " + _))

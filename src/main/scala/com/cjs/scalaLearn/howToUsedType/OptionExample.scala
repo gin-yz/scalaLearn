@@ -26,8 +26,8 @@ object OptionExample extends App {
   }
 
   for (input <- Set("test", "hack")) {
-    val comment = commentOnPractice(input)
-    val commentDisplay = comment.getOrElse("Found no comments") //若为None，则返回Found no comments
+    val comment: Option[String] = commentOnPractice(input)
+    val commentDisplay: String = comment.getOrElse("Found no comments") //若为None，则返回Found no comments
     println(s"input: $input comment: $commentDisplay")
   }
   // #snip

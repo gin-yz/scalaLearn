@@ -11,7 +11,7 @@ object ExtendAndHighLevelFunction extends App {
   }
 
   def selfFoldLeft(arr: Array[Int], initalValue: Int, operation: (Int, Int) => Int): Int = {
-    var result = initalValue
+    var result: Int = initalValue
     arr.foreach(i => result = operation(result, i))
     result
   }

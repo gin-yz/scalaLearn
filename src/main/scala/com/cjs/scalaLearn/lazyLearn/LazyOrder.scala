@@ -19,15 +19,15 @@ package com.cjs.scalaLearn.lazyLearn
 object LazyOrder extends App {
   // #snip
   import scala.io._
-
-  def read = StdIn.readInt()
-
-  @volatile lazy val first = read
-  @volatile lazy val second = read
-
-  if (Math.random() < 0.5)
-    second
-
-  println(first - second)
+//
+//  def read:Int = StdIn.readInt()
+//
+//  @volatile lazy val first = read
+//  @volatile lazy val second = read
+//
+//  if (Math.random() < 0.5)
+//    second
+//
+//  println(first - second)
   // #snip
 }
