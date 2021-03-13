@@ -20,6 +20,18 @@
             <version>3.2.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.scala-lang.modules</groupId>
+            <artifactId>scala-xml_2.13</artifactId>
+            <version>2.0.0-M3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.scala-lang.modules</groupId>
+            <artifactId>scala-parallel-collections_2.13</artifactId>
+            <version>0.2.0</version>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>WordCount</finalName>

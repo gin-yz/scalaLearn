@@ -76,7 +76,7 @@ object Weather extends App {
   // #snip_12-15
 
   // #snip_12-16
-//  import scala.collection.parallel.CollectionConverters._
+  import scala.collection.parallel.CollectionConverters._
   timeSample { cities =>
     cities.par.map(getWeatherData).toList //这就并发了
   }
