@@ -8,7 +8,7 @@ object StreamLearn {
 
     def toList: List[A] = {
       /**
-       * 将Stream中的积累函数强制执行
+       * 将Stream中的惰性积累函数强制执行
        *
        * @param s   :源stream
        * @param acc ：积累的List
