@@ -5,6 +5,7 @@ import scala.collection.mutable.ListBuffer
 
 object ListLearn {
 
+  //Nothing是所有类的子类，因为Nil为什么都没为List[Nothing]，所以是A+而不是A
   sealed trait List[+A]
 
   case object Nil extends List[Nothing]
